@@ -6,12 +6,10 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 
-COPY backend/Unistock/Unistock/UniStock.csproj Unistock/
-RUN dotnet restore Unistock/UniStock.csproj
+COPY UniStock.csproj .
+RUN dotnet restore UniStock.csproj
 
-COPY backend/Unistock/Unistock/. ./Unistock/
-
-WORKDIR /src/Unistock
+COPY . .
 RUN dotnet build UniStock.csproj -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
