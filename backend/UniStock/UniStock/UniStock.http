@@ -1,0 +1,6 @@
+@UniStock_HostAddress = http://localhost:5265
+
+GET {{UniStock_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
