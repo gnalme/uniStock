@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KpJZKaBrcak=",
+  "dgSpecHash": "Asvt+1Q2EeE=",
   "success": true,
   "projectFilePath": "C:\\Users\\eraiv\\OneDrive\\Рабочий стол\\CourseProj\\backend\\UniStock\\UniStock\\UniStock.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.http.abstractions\\2.3.0\\microsoft.aspnetcore.http.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.http.extensions\\2.3.0\\microsoft.aspnetcore.http.extensions.2.3.0.nupkg.sha512",
     "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.http.features\\2.3.0\\microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512",
+    "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.httpoverrides\\2.3.5\\microsoft.aspnetcore.httpoverrides.2.3.5.nupkg.sha512",
     "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.8\\microsoft.aspnetcore.openapi.9.0.8.nupkg.sha512",
     "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\9.0.8\\microsoft.aspnetcore.signalr.common.9.0.8.nupkg.sha512",
     "C:\\Users\\eraiv\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\2.3.0\\microsoft.aspnetcore.webutilities.2.3.0.nupkg.sha512",
