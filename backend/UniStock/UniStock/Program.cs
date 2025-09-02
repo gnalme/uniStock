@@ -24,28 +24,16 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("https://unistock-l3tx.onrender.com") 
                 .AllowAnyHeader()
-                .AllowAnyMethod();
-                //.AllowCredentials();
+                .AllowAnyMethod()
+                .AllowCredentials();
         });
 });
 
 var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")
                        ?? builder.Configuration.GetConnectionString("DefaultConnection");
 
-if (!string.IsNullOrEmpty(connectionString))
-{
-    var uri = new Uri(connectionString);
-    var userInfo = uri.UserInfo.Split(':');
-
-    connectionString = $"Host={uri.Host};Port={uri.Port};Username={userInfo[0]};Password={userInfo[1]};Database={uri.AbsolutePath.Substring(1)};sslmode=Require;Trust Server Certificate=true";
-}
-else
-{
-    connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-}
-
-// builder.Services.AddDbContext<AppDbContext>(options =>
-//     options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<AppDbContext>(options =>
+     options.UseNpgsql(connectionString));
 
 builder.Services.AddAuthentication(options =>
     {
