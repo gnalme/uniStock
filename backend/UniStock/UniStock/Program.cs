@@ -97,8 +97,13 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseCors("AllowReactApp");
-
-app.UseHttpsRedirection();
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Access-Control-Allow-Origin", "https://unistock-l3tx.onrender.com");
+    context.Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type");
+    context.Response.Headers.Append("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+    await next.Invoke();
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
