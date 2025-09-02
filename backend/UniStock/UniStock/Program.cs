@@ -21,7 +21,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowReactApp",
         policy =>
         {
-            policy.WithOrigins("https://unistock-l3tx.onrender.com/api") 
+            policy.WithOrigins("https://unistock-l3tx.onrender.com") 
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
@@ -93,6 +93,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
+
+app.UseHttpsRedirection();
 
 app.UseCors("AllowReactApp");
 
