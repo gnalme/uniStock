@@ -86,6 +86,8 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseCors("AllowReactApp");
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -95,15 +97,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.UseCors("AllowReactApp");
-app.Use(async (context, next) =>
-{
-    context.Response.Headers.Append("Access-Control-Allow-Origin", "https://unistock-l3tx.onrender.com");
-    context.Response.Headers.Append("Access-Control-Allow-Headers", "Content-Type");
-    context.Response.Headers.Append("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-    await next.Invoke();
-});
 
 app.UseAuthentication();
 app.UseAuthorization();
