@@ -23,8 +23,8 @@ builder.Services.AddCors(options =>
         {
             policy.WithOrigins("https://unistock-l3tx.onrender.com") 
                 .AllowAnyHeader()
-                .AllowAnyMethod()
-                .AllowCredentials();
+                .AllowAnyMethod();
+                //.AllowCredentials();
         });
 });
 
