@@ -29,8 +29,11 @@ builder.Services.AddCors(options =>
         });
 });
 
+var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING")
+                       ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddAuthentication(options =>
     {

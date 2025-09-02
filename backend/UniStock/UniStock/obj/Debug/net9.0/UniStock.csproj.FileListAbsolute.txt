@@ -144,3 +144,4 @@ C:\Users\eraiv\OneDrive\Рабочий стол\CourseProj\backend\UniStock\UniS
 C:\Users\eraiv\OneDrive\Рабочий стол\CourseProj\backend\UniStock\UniStock\bin\Debug\net9.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\eraiv\OneDrive\Рабочий стол\CourseProj\backend\UniStock\UniStock\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\eraiv\OneDrive\Рабочий стол\CourseProj\backend\UniStock\UniStock\bin\Debug\net9.0\Microsoft.Extensions.Features.dll
+C:\Users\eraiv\OneDrive\Рабочий стол\CourseProj\backend\UniStock\UniStock\obj\Debug\net9.0\UniStock.sourcelink.json

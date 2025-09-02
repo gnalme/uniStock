@@ -12,6 +12,7 @@
           "Microsoft.AspNetCore.Authentication.Google": "9.0.8",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.8",
           "Microsoft.AspNetCore.Authentication.OAuth": "2.3.0",
+          "Microsoft.AspNetCore.HttpOverrides": "2.3.5",
           "Microsoft.AspNetCore.OpenApi": "9.0.8",
           "Microsoft.AspNetCore.SignalR.Common": "9.0.8",
           "Microsoft.EntityFrameworkCore": "9.0.8",
@@ -156,6 +157,13 @@
       "Microsoft.AspNetCore.Http.Features/2.3.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "9.0.8"
+        }
+      },
+      "Microsoft.AspNetCore.HttpOverrides/2.3.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "2.3.0",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.8",
+          "Microsoft.Extensions.Options": "9.0.8"
         }
       },
       "Microsoft.AspNetCore.OpenApi/9.0.8": {
@@ -1083,6 +1091,13 @@
       "sha512": "sha512-f10WUgcsKqrkmnz6gt8HeZ7kyKjYN30PO7cSic1lPtH7paPtnQqXPOveul/SIPI43PhRD4trttg4ywnrEmmJpA==",
       "path": "microsoft.aspnetcore.http.features/2.3.0",
       "hashPath": "microsoft.aspnetcore.http.features.2.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.HttpOverrides/2.3.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aid1sutQ8Ca6HQj1WO85y0MwmD6cP7B5Ibh6vEKkYeJVpYQD5TzduXDGKgX8Rp2EXxcT72Esk/oyiB58NyDVdA==",
+      "path": "microsoft.aspnetcore.httpoverrides/2.3.5",
+      "hashPath": "microsoft.aspnetcore.httpoverrides.2.3.5.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/9.0.8": {
       "type": "package",
