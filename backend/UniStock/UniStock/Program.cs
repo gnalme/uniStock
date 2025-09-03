@@ -1,4 +1,3 @@
-using System.Security.Claims;
 using System.Text;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Google;
@@ -61,17 +60,17 @@ builder.Services.AddAuthentication(options =>
         options.DefaultChallengeScheme = "Google";
     })
     .AddCookie("Cookies")
-    .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+    // .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
+    // {
+    //     options.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? string.Empty;
+    //     options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? string.Empty;
+    //     options.CallbackPath = "/api/account/google-callback";
+    //     options.SaveTokens = true;
+    // })
+    /*.AddOAuth("GitHub", options =>
     {
-        options.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? string.Empty;
-        options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? string.Empty;
-        options.CallbackPath = "/api/account/google-callback";
-        options.SaveTokens = true;
-    })
-    .AddOAuth("GitHub", options =>
-    {
-        options.ClientId = builder.Configuration["Authentication:GitHub:ClientId"];
-        options.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"];
+        options.ClientId = builder.Configuration["Authentication:GitHub:ClientId"] ?? string.Empty;
+        options.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"] ?? string.Empty;
         options.CallbackPath = "/api/account/github-callback";
         options.AuthorizationEndpoint = "https://github.com/login/oauth/authorize";
         options.TokenEndpoint = "https://github.com/login/oauth/access_token";
@@ -84,7 +83,7 @@ builder.Services.AddAuthentication(options =>
         options.ClaimActions.MapJsonKey(ClaimTypes.Name, "login");
         options.ClaimActions.MapJsonKey("urn:github:name", "name");
         options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
-    });
+    })*/;
 
 builder.Services.AddAuthorization();
 
@@ -104,7 +103,7 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
