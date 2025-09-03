@@ -89,6 +89,8 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
+app.UseRouting();
+
 app.UseCors("AllowReactApp");
 
 app.UseForwardedHeaders(new ForwardedHeadersOptions
