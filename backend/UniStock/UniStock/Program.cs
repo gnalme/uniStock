@@ -57,7 +57,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultScheme = "Cookies";
-        options.DefaultChallengeScheme = "Google";
+        //options.DefaultChallengeScheme = "Google";
     })
     .AddCookie("Cookies")
     // .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
@@ -88,12 +88,14 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build();
+
+app.UseCors("AllowReactApp");
+
 app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedProto | ForwardedHeaders.XForwardedFor
 });
 
-app.UseCors("AllowReactApp");
 
 if (app.Environment.IsDevelopment())
 {
