@@ -106,7 +106,7 @@ public class AccountController : ControllerBase
         return Ok(new { message = "User updated successfully" });
     }
     
-     [HttpGet("login-google")]
+     /*[HttpGet("login-google")]
      public IActionResult LoginGoogle()
     {
         var redirectUrl = Url.Action(nameof(GoogleCallback), "account");
@@ -179,7 +179,7 @@ public class AccountController : ControllerBase
     
         var redirectUrl = $"http://localhost:5173/social-login-success?token={token}&isAdmin={user.IsAdmin}&userId={user.Id}";
         return Redirect(redirectUrl);
-    }
+    }*/
     
     private string GenerateJwtToken(User user)
     {
