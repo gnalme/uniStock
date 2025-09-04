@@ -88,7 +88,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapHub<CommentsHub>("/commentsHub");
+app.MapHub<CommentsHub>("api/commentsHub");
 
 app.MapControllers();
 
