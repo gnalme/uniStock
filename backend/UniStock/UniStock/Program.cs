@@ -22,6 +22,7 @@ builder.Services.AddCors(options =>
         policy =>
         {
             policy.WithOrigins("https://unistock-l3tx.onrender.com") 
+            //policy.WithOrigins("http://localhost:5173")     
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials();
@@ -57,33 +58,8 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthentication(options =>
     {
         options.DefaultScheme = "Cookies";
-        //options.DefaultChallengeScheme = "Google";
     })
-    .AddCookie("Cookies")
-    // .AddGoogle(GoogleDefaults.AuthenticationScheme, options =>
-    // {
-    //     options.ClientId = builder.Configuration["Authentication:Google:ClientId"] ?? string.Empty;
-    //     options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"] ?? string.Empty;
-    //     options.CallbackPath = "/api/account/google-callback";
-    //     options.SaveTokens = true;
-    // })
-    /*.AddOAuth("GitHub", options =>
-    {
-        options.ClientId = builder.Configuration["Authentication:GitHub:ClientId"] ?? string.Empty;
-        options.ClientSecret = builder.Configuration["Authentication:GitHub:ClientSecret"] ?? string.Empty;
-        options.CallbackPath = "/api/account/github-callback";
-        options.AuthorizationEndpoint = "https://github.com/login/oauth/authorize";
-        options.TokenEndpoint = "https://github.com/login/oauth/access_token";
-        options.UserInformationEndpoint = "https://api.github.com/user";
-        
-        options.Scope.Add("user:email"); 
-        options.SaveTokens = true;
-        
-        options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
-        options.ClaimActions.MapJsonKey(ClaimTypes.Name, "login");
-        options.ClaimActions.MapJsonKey("urn:github:name", "name");
-        options.ClaimActions.MapJsonKey(ClaimTypes.Email, "email");
-    })*/;
+    .AddCookie("Cookies");
 
 builder.Services.AddAuthorization();
 

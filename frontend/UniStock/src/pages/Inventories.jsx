@@ -107,14 +107,19 @@ export default function Inventories() {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-3 gap-2 flex-wrap">
 
-        <input
+        <div className="d-flex">
+          <div className="d p-2">
+            <i class="bi bi-search"></i>
+          </div>
+          <input
           type="text"
-          className="form-control"
-          style={{ maxWidth: 380 }}
+          className="form-control s"
+          style={{ maxWidth: 400 }}
           placeholder={t('Search by title')}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-        />
+          />
+        </div>
 
         <div className="d-flex">
         {!selectMode ? (

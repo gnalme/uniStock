@@ -26,7 +26,7 @@ export default function Navbar() {
   const { user } = useAuth();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark p-3 z-3">
       <div className="container-fluid">
         <h4 className="text-light m-0">UniStock</h4>
 
@@ -64,14 +64,14 @@ export default function Navbar() {
           <div className="d-flex flex-column flex-lg-row align-items-lg-center">
             {token ? (
               <>
-                <div className="d-flex justify-content-between me-3 gap-3">
+                <div className="d-flex justify-content-between me-3 gap-3 gn">
                   {user && (
                   <span className="navbar-text me-lg-3 mb-2 mb-lg-0">
                     {t("Welcome")}, {user.userName}
                   </span>
                 )}
 
-                <div className="form-check form-switch text-light d-flex justify-content-center align-items-center me-lg-3">
+                <div className="form-check form-switch text-light d-flex justify-content-center align-items-center me-lg-3 lan">
                   <input
                     className="form-check-input"
                     type="checkbox"

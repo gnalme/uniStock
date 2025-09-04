@@ -146,13 +146,13 @@ export default function ProfilePage() {
           setActiveTab(k);
           setSelectedIds([]);
         }}
-        className="mb-3"
+        className="mb-3 mt-3"
         fill
       >
         <Tab eventKey="my" title={t("My Inventories")}>
           {activeTab === "my" && (
             <button
-                  className="btn btn-danger"
+                  className="btn btn-danger mt-4"
                   onClick={handleBulkDelete}
                   disabled={selectedIds.length === 0}
                 >
@@ -161,110 +161,110 @@ export default function ProfilePage() {
           )}
 
           <button
-            className="btn btn-primary ms-3"
+            className="btn btn-primary ms-3 mt-4"
             onClick={() => navigate("/inventories/new")}
             disabled={!isAuthenticated}
           >
             {t("Create Inventory")} <i className="bi bi-plus-lg"></i>
           </button>
-    <table className="table table-striped">
-      <thead>
-        <tr>
-          <th>
-            <input
-              type="checkbox"
-              onChange={toggleSelectAll}
-              checked={
-                selectedIds.length > 0 &&
-                selectedIds.length === myInventories.length
-              }
-            />
-          </th>
-          <th>{t("Title")}</th>
-          <th>{t("Description")}</th>
-          <th>{t("Category")}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {myInventories.map((inv) => (
-          <tr key={inv.id}>
-            <td>
-              <input
-                type="checkbox"
-                checked={selectedIds.includes(inv.id)}
-                onChange={() => toggleSelect(inv.id)}
-              />
-            </td>
-            <td
-              onClick={() => navigate(`/inventories/${inv.id}`)}
-              style={{ cursor: "pointer" }}
-            >
-              {inv.title}
-            </td>
-            <td
-              className="text-truncate"
-              onClick={() => navigate(`/inventories/${inv.id}`)}
-              style={{ cursor: "pointer" }}
-            >
-              {inv.description || "-"}
-            </td>
-            <td
-              onClick={() => navigate(`/inventories/${inv.id}`)}
-              style={{ cursor: "pointer" }}
-            >
-              {inv.category}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </Tab>
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  <input
+                    type="checkbox"
+                    onChange={toggleSelectAll}
+                    checked={
+                      selectedIds.length > 0 &&
+                      selectedIds.length === myInventories.length
+                    }
+                  />
+                </th>
+                <th>{t("Title")}</th>
+                <th>{t("Description")}</th>
+                <th>{t("Category")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {myInventories.map((inv) => (
+                <tr key={inv.id}>
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={selectedIds.includes(inv.id)}
+                      onChange={() => toggleSelect(inv.id)}
+                    />
+                  </td>
+                  <td
+                    onClick={() => navigate(`/inventories/${inv.id}`)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {inv.title}
+                  </td>
+                  <td
+                    className="text-truncate"
+                    onClick={() => navigate(`/inventories/${inv.id}`)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {inv.description || "-"}
+                  </td>
+                  <td
+                    onClick={() => navigate(`/inventories/${inv.id}`)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    {inv.category}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </Tab>
 
-  <Tab eventKey="accessible" title={t("Inventories with Write Access")}>
-    <table className="table table-striped mt-4">
-      <thead>
-        <tr>
-          <th>{t("Title")}</th>
-          <th>{t("Description")}</th>
-          <th>{t("Category")}</th>
-        </tr>
-      </thead>
-      <tbody>
-        {accessibleInventories.length === 0 ? (
-          <tr>
-            <td colSpan="3" className="text-center text-muted">
-              {t("No accessible inventories")}
-            </td>
-          </tr>
-        ) : (
-          accessibleInventories.map((inv) => (
-            <tr key={inv.id}>
-              <td
-                onClick={() => navigate(`/inventories/${inv.id}`)}
-                style={{ cursor: "pointer" }}
-              >
-                {inv.title}
-              </td>
-              <td
-                className="text-truncate"
-                onClick={() => navigate(`/inventories/${inv.id}`)}
-                style={{ cursor: "pointer" }}
-              >
-                {inv.description || "-"}
-              </td>
-              <td
-                onClick={() => navigate(`/inventories/${inv.id}`)}
-                style={{ cursor: "pointer" }}
-              >
-                {inv.category}
-              </td>
-            </tr>
-          ))
-        )}
-      </tbody>
-    </table>
-  </Tab>
-</Tabs>
+        <Tab eventKey="accessible" title={t("Inventories with Write Access")}>
+          <table className="table table-striped mt-4">
+            <thead>
+              <tr>
+                <th>{t("Title")}</th>
+                <th>{t("Description")}</th>
+                <th>{t("Category")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {accessibleInventories.length === 0 ? (
+                <tr>
+                  <td colSpan="3" className="text-center text-muted">
+                    {t("No accessible inventories")}
+                  </td>
+                </tr>
+              ) : (
+                accessibleInventories.map((inv) => (
+                  <tr key={inv.id}>
+                    <td
+                      onClick={() => navigate(`/inventories/${inv.id}`)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {inv.title}
+                    </td>
+                    <td
+                      className="text-truncate"
+                      onClick={() => navigate(`/inventories/${inv.id}`)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {inv.description || "-"}
+                    </td>
+                    <td
+                      onClick={() => navigate(`/inventories/${inv.id}`)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {inv.category}
+                    </td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </Tab>
+      </Tabs>
     </div>
   );
 }
