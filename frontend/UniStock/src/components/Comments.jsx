@@ -13,7 +13,7 @@ export default function Comments({ inventoryId }) {
     loadComments();
 
     const newConnection = new HubConnectionBuilder()
-      .withUrl("https://unistockback.onrender.com/api", {
+      .withUrl("https://unistockback.onrender.com/api/commentsHub", {
         accessTokenFactory: () => localStorage.getItem("token")
       })
       .withAutomaticReconnect()
