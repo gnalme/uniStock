@@ -20,11 +20,6 @@ public class InventoriesController : ControllerBase
         _context = context;
     }
 
-    // private Guid GetCurrentUserId()
-    // {
-    //     var idClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-    //     return idClaim != null ? Guid.Parse(idClaim) : Guid.Empty;
-    // }
     private Guid GetCurrentUserId() =>
         Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 

@@ -76,6 +76,9 @@ const resources = {
       "Create" : "Create",
       "Add" : "Add",
       "Profile" : "Profile",
+      "Name is required" : "Name is required",
+      "Email is required" : "Email is required",
+      "Password is required" : "Password is required",
     }
   },
   ru: {
@@ -150,7 +153,10 @@ const resources = {
       "Add field" : "Добавить поле",
       "Create" : "Создать",
       "Add" : "Добавить",
-      "Profile" : "Профиль"
+      "Profile" : "Профиль",
+      "Name is required" : "Имя обязательно",
+      "Email is required" : "Эл. почта обязательна",
+      "Password is required" : "Пароль обязателен",
     }
   }
 };
