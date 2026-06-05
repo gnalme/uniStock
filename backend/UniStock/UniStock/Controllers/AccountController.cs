@@ -43,7 +43,7 @@ public class AccountController : ControllerBase
         };
 
         _context.Users.Add(user);
-        _context.SaveChanges();
+        _context.SaveChangesAsync();
 
         return Ok(new { message = "User registered successfully" });
     }
